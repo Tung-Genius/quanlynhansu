@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login System</title>
@@ -10,7 +10,7 @@
   <div class="animated bounceInDown">
     <div class="container">
       <span class="error animated tada" id="msg"></span>
-      <form name="form1" class="box" onsubmit="return checkStuff()">
+      <form name="form1" class="box" method="post" th:action="@{admin}" onsubmit="return checkStuff()" th:object="${user}">
         <h4>Admin<span>Dashboard</span></h4>
         <h5>Sign in to your account.</h5>
         <input type="text" name="email" placeholder="Email" autocomplete="off">
