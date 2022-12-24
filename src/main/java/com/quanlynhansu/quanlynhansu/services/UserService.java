@@ -12,4 +12,11 @@ public class UserService {
     public User findById(String id){
         return userRepository.findById(id).get();
     }
+    public String getIdByEmailAndPassword(User user){
+        return userRepository.getIdByEmailAndPassword(user.getEmail(), user.getPassword());
+    }
+
+    public int getQuyenById(String manv){
+        return userRepository.getQuyenById(manv);
+    }
 }

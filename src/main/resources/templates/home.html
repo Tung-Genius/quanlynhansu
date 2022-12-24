@@ -61,6 +61,7 @@
                       <thead>
                       <tr>
                           <th>STT</th>
+                          <th>Mã nhân viên</th>
                           <th>Họ và tên</th>
                           <th>Ngày sinh</th>
                           <th>Quê quán</th>
@@ -73,16 +74,17 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
-                          <td>1</td>
+                      <tr th:each="nhanvien,index : ${nhanvienList}">
+                          <td th:text="${index.count}"></td>
+                          <td th:text="${nhanvien.getManv()}"></td>
+                          <td th:text="${nhanvien.getHoten()}"></td>
+                          <td th:text="${nhanvien.getNgaysinh()}"></td>
+                          <td th:text="${nhanvien.getQuequan()}"></td>
+                          <td th:text="${nhanvien.getDantoc()}"></td>
+                          <td th:text="${nhanvien.getTongiao()}"></td>
+                          <td th:text="${nhanvien.getTinhtranghonnhan()}"></td>
+                          <td th:text="${nhanvien.getTinhtrangsuckhoe()}"></td>
+                          <td th:text="${nhanvien.getImage()}"></td>
                           <td>
                               <a href="#"><i class="fa-regular fa-pen-to-square icon-edit"></i></a>
                               <a href="#"><i class="fa-regular fa-trash-can icon-delete"></i></a>
