@@ -1,0 +1,148 @@
+
+:root{
+   --height-header: 60px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.container{
+    margin-left: 300px;
+    width: 100%;
+}
+
+/*header*/
+.header{
+    height: var(--height-header);
+    width: calc(100% - 300px);
+    background-color: dodgerblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headerInput{
+    padding: 7px 20px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 450;
+    border-radius: 5px;
+
+}
+
+#btn_add{
+    padding: 5px 20px;
+    font-size: 17px;
+    font-weight: 450;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#btn_add:hover{
+    opacity: 0.6;
+    cursor: pointer;
+    transition: .6s;
+}
+.sidebar{
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    /*background-color: dodgerblue;*/
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    left: 0;
+    top: 0;
+}
+
+.sidebarTitle{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.persion{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid darkgray;
+}
+
+.sidebarMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.sidebarList{
+    width: 100%;
+}
+
+.sidebarItem{
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.sidebarItem a{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebarItem:hover{
+    background-color: darkgray;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.persionImg{
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.persionName{
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.main{
+    padding: 30px 30px;
+}
+
+.list-nhanvien th, td{
+    padding: 7px 20px;
+    text-align: center;
+}
+
+.icon-edit, .icon-delete{
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+.icon-edit{
+    color: blue;
+}
+
+.icon-delete{
+    color: red;
+}

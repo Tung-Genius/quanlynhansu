@@ -3,8 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lý nhân sự</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-  <h1 th:if="${user}" th:utext="${user}"></h1>
+  <div class="wrapper">
+      <!--      start sidebar-->
+      <div class="sidebar">
+          <h2 class="sidebarTitle">Quản lý Nhân viên</h2>
+          <div class="persion">
+              <a href="#">
+                  <img class="persionImg" src="/img/user1.webp" alt="User">
+              </a>
+              <div class="persionInfo">
+                  <a href="#" class="persionName">Tung</a> <br>
+                  <span class="persionQuyen">Nhân viên nhân sự</span>
+              </div>
+          </div>
+
+          <div class="sidebarMenu">
+              <ul class="sidebarList">
+                  <li class="sidebarItem">
+                      <a href="#">Phòng Nhân Sự</a>
+                  </li>
+                  <li class="sidebarItem">
+                      <a href="#">Phòng Tài Chính</a>
+                  </li>
+                  <li class="sidebarItem">
+                      <a href="#">Phòng CTSV</a>
+                  </li>
+                  <li class="sidebarItem">
+                      <a href="#">Phòng Đào Tạo</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <!--      end sidebar-->
+      <div class="container">
+          <!--      start header-->
+          <div class="header" id="header">
+              <div class="headerSearch">
+                  <form>
+                      <input class="headerInput" type="text" name="search" placeholder="Tìm kiếm nhân viên...">
+                      <input class="headerInput" type="submit" value="Search">
+                  </form>
+              </div>
+              <div class="headerButtons">
+                  <a href="#"><button id="btn_add">Thêm nhân viên</button></a>
+              </div>
+          </div>
+          <!--      end header-->
+
+          <!--      start main-->
+          <div class="main">
+              <!--          start listnhanvien-->
+              <div class="list-nhanvien">
+                  <table>
+                      <thead>
+                      <tr>
+                          <th>STT</th>
+                          <th>Họ và tên</th>
+                          <th>Ngày sinh</th>
+                          <th>Quê quán</th>
+                          <th>Dân tộc</th>
+                          <th>Tôn giáo</th>
+                          <th>Tình trạng hôn nhân</th>
+                          <th>Tình trạng sức khỏe</th>
+                          <th>Image</th>
+                          <th>Action</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>
+                              <a href="#"><i class="fa-regular fa-pen-to-square icon-edit"></i></a>
+                              <a href="#"><i class="fa-regular fa-trash-can icon-delete"></i></a>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <!--      end main-->
+      </div>
+  </div>
+<!--  fontawesome-->
+  <script src="https://kit.fontawesome.com/9522477d33.js" crossorigin="anonymous"></script>
 </body>
 </html>
