@@ -37,6 +37,7 @@ public class LoginController {
                 return "home";
             } else if(quyen == 2){
                 model.addAttribute("user", userService.findById(manv));
+                model.addAttribute("hoten", nhanVienService.getHotenById(manv));
                 model.addAttribute("nhanvienList", nhanVienService.findAll());
                 return "home";
             }

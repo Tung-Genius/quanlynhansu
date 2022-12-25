@@ -2,21 +2,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Quản lý nhân sự</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS-->
     <link rel="stylesheet" href="/css/home.css">
+    <!-- Bootstrap CSS -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <title>Quản lý nhân sự</title>
 </head>
 <body>
   <div class="wrapper">
       <!--      start sidebar-->
       <div class="sidebar">
           <h2 class="sidebarTitle">Quản lý Nhân viên</h2>
-          <div class="persion">
-              <a href="#">
+          <div class="persion" th:switch="${user.getQuyen()}">
+              <a href="#" th:case="1">
                   <img class="persionImg" src="/img/user1.webp" alt="User">
               </a>
-              <div class="persionInfo">
-                  <a href="#" class="persionName">Tung</a> <br>
-                  <span class="persionQuyen">Nhân viên nhân sự</span>
+              <a href="#" th:case="2">
+                  <img class="persionImg" src="/img/hieutruong.webp" alt="User">
+              </a>
+              <div th:switch="${user.getQuyen()}">
+                  <div class="persionInfo" th:case="1">
+                      <a href="#" class="persionName" th:text="${hoten}"></a> <br>
+                      <span class="persionQuyen">Nhân viên nhân sự</span>
+                  </div>
+                  <div class="persionInfo" th:case="2">
+                      <a href="#" class="persionName">Huỳnh Công Pháp</a> <br>
+                      <span class="persionQuyen">Hiệu trưởng</span>
+                  </div>
               </div>
           </div>
 
@@ -38,7 +52,8 @@
           </div>
       </div>
       <!--      end sidebar-->
-      <div class="container">
+
+      <div class="containerMain">
           <!--      start header-->
           <div class="header" id="header">
               <div class="headerSearch">
@@ -48,7 +63,7 @@
                   </form>
               </div>
               <div class="headerButtons">
-                  <a href="#"><button id="btn_add">Thêm nhân viên</button></a>
+                  <a th:href="@{/nhanvien/add}"><button id="btn_add">Thêm nhân viên</button></a>
               </div>
           </div>
           <!--      end header-->
@@ -97,7 +112,11 @@
           <!--      end main-->
       </div>
   </div>
-<!--  fontawesome-->
+    <!--  fontawesome-->
   <script src="https://kit.fontawesome.com/9522477d33.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" -->
+<!--          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" -->
+<!--          crossorigin="anonymous"></script>-->
 </body>
 </html>

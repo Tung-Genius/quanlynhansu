@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 ul{
     list-style: none;
 }
@@ -19,15 +20,13 @@ a{
     position: relative;
 }
 
-.container{
+.containerMain{
     margin-left: 300px;
-    width: 100%;
 }
 
 /*header*/
 .header{
     height: var(--height-header);
-    width: calc(100% - 300px);
     background-color: dodgerblue;
     display: flex;
     justify-content: space-around;
@@ -75,6 +74,10 @@ a{
     font-weight: 550;
 }
 
+.sidebarItem{
+    width: 100%;
+}
+
 .persion{
     display: flex;
     align-items: center;
@@ -89,13 +92,10 @@ a{
     margin-top: 30px;
 }
 
-.sidebarList{
-    width: 100%;
-}
-
 .sidebarItem{
     padding: 10px 20px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .sidebarItem a{
@@ -127,10 +127,15 @@ a{
 
 .main{
     padding: 30px 30px;
+    width: 100%;
+}
+
+.list-nhanvien{
+    width: 100%;
 }
 
 .list-nhanvien th, td{
-    padding: 7px 20px;
+    padding: 7px 10px;
     text-align: center;
 }
 

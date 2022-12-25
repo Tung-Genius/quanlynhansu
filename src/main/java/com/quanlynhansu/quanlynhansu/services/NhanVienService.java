@@ -15,4 +15,10 @@ public class NhanVienService {
     public List<NhanVien> findAll(){
         return (List<NhanVien>) nhanVienRepository.findAll();
     }
+    public String getHotenById(String manv){
+        return nhanVienRepository.getHotenById(manv);
+    }
+    public void save(NhanVien nhanVien){
+        nhanVienRepository.save(nhanVien);
+    }
 }
