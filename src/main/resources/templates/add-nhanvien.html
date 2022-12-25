@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <form th:action="@{/nhanvien/add}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/nhanvien/add}" method="post" th:object="${nhanvien}" enctype="multipart/form-data">
             <div>
                 <label for="manv">Mã nhân viên</label> <br>
                 <input type="text" id="manv" name="manv" placeholder="Mã nhân viên...">

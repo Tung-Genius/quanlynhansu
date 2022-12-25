@@ -1,13 +1,8 @@
 package com.quanlynhansu.quanlynhansu.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-@Table(name = "nhanvien")
-public class NhanVien {
-    @Id
+public class NhanVienForm {
     private String manv;
     private String hoten;
     private String ngaysinh;
@@ -16,21 +11,20 @@ public class NhanVien {
     private String tongiao;
     private String tinhtranghonnhan;
     private String tinhtrangsuckhoe;
-    private String image;
+    private MultipartFile image;
 
-    public NhanVien() {
+    public NhanVienForm() {
     }
-
-    public NhanVien(NhanvienBuilder nhanvienBuilder){
-        this.manv = nhanvienBuilder.manv;
-        this.hoten = nhanvienBuilder.hoten;
-        this.ngaysinh = nhanvienBuilder.ngaysinh;
-        this.quequan = nhanvienBuilder.quequan;
-        this.dantoc = nhanvienBuilder.dantoc;
-        this.tongiao = nhanvienBuilder.tongiao;
-        this.tinhtranghonnhan = nhanvienBuilder.tinhtranghonnhan;
-        this.tinhtrangsuckhoe = nhanvienBuilder.tinhtrangsuckhoe;
-        this.image = nhanvienBuilder.image;
+    public NhanVienForm(NhanVienFormBuilder nhanVienFormBuilder) {
+        this.manv = nhanVienFormBuilder.manv;
+        this.hoten = nhanVienFormBuilder.hoten;
+        this.ngaysinh = nhanVienFormBuilder.ngaysinh;
+        this.quequan = nhanVienFormBuilder.quequan;
+        this.dantoc = nhanVienFormBuilder.dantoc;
+        this.tongiao = nhanVienFormBuilder.tongiao;
+        this.tinhtranghonnhan = nhanVienFormBuilder.tinhtranghonnhan;
+        this.tinhtrangsuckhoe = nhanVienFormBuilder.tinhtrangsuckhoe;
+        this.image = nhanVienFormBuilder.image;
     }
 
     public String getManv() {
@@ -97,15 +91,16 @@ public class NhanVien {
         this.tinhtrangsuckhoe = tinhtrangsuckhoe;
     }
 
-    public String getImage() {
+    public MultipartFile getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MultipartFile image) {
         this.image = image;
     }
 
-    public static class NhanvienBuilder{
+
+    public static class NhanVienFormBuilder{
         private String manv;
         private final String hoten;
         private String ngaysinh;
@@ -114,52 +109,44 @@ public class NhanVien {
         private String tongiao;
         private String tinhtranghonnhan;
         private String tinhtrangsuckhoe;
-        private String image;
-        public NhanvienBuilder manv(String manv){
-            this.manv = manv;
+        private MultipartFile image;
+        public NhanVienFormBuilder manv(String manv){
+            this.ngaysinh = manv;
             return this;
         }
-        public NhanvienBuilder(String hoten){
+        public NhanVienFormBuilder(String hoten){
             this.hoten = hoten;
         }
-
-        public NhanvienBuilder ngaysinh(String ngaysinh){
+        public NhanVienFormBuilder ngaysinh(String ngaysinh){
             this.ngaysinh = ngaysinh;
             return this;
         }
-
-        public NhanvienBuilder quequan(String quequan){
+        public NhanVienFormBuilder quequan(String quequan){
             this.quequan = quequan;
             return this;
         }
-
-        public NhanvienBuilder dantoc(String dantoc){
+        public NhanVienFormBuilder dantoc(String dantoc){
             this.dantoc = dantoc;
             return this;
         }
-
-        public NhanvienBuilder tongiao(String tongiao){
+        public NhanVienFormBuilder tongiao(String tongiao){
             this.tongiao = tongiao;
             return this;
         }
-
-        public NhanvienBuilder tinhtranghonnhan(String tinhtranghonnhan){
+        public NhanVienFormBuilder tinhtranghonnhan(String tinhtranghonnhan){
             this.tinhtranghonnhan = tinhtranghonnhan;
             return this;
         }
-
-        public NhanvienBuilder tinhtrangsuckhoe(String tinhtrangsuckhoe){
-            this.ngaysinh = ngaysinh;
+        public NhanVienFormBuilder tinhtrangsuckhoe(String tinhtrangsuckhoe){
+            this.tinhtrangsuckhoe = tinhtrangsuckhoe;
             return this;
         }
-
-        public NhanvienBuilder image(String image){
+        public NhanVienFormBuilder image(MultipartFile image){
             this.image = image;
             return this;
         }
-
-        public NhanVien build(){
-            return new NhanVien(this);
+        public NhanVienForm build(){
+            return new NhanVienForm(this);
         }
     }
 }
